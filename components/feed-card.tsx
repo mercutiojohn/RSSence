@@ -6,6 +6,7 @@ import { Calendar, Globe } from "lucide-react"
 import type { FeedItem } from "@/types/feed"
 import { formatDistanceToNow } from "date-fns"
 import { useFeed } from "@/context/feed-context"
+import { decodeHtmlEntities } from "@/lib/utils"
 
 interface FeedCardProps {
   item: FeedItem
@@ -35,6 +36,8 @@ export default function FeedCard({ item }: FeedCardProps) {
   const scale = contentSize / 100
 
   const formattedDate = formatDate(item.pubDate)
+  const decodedTitle = decodeHtmlEntities(item.title)
+  const decodedDescription = item.description ? decodeHtmlEntities(item.description) : undefined
 
   return (
     <div className="flex h-full w-full items-center justify-center p-8">
@@ -54,7 +57,7 @@ export default function FeedCard({ item }: FeedCardProps) {
               {/* 16:9 aspect ratio */}
               <Image
                 src={item.image || "/placeholder.svg?height=300&width=400"}
-                alt={item.title}
+                alt={decodedTitle}
                 fill
                 className="object-cover"
                 priority
@@ -69,9 +72,9 @@ export default function FeedCard({ item }: FeedCardProps) {
               <span className="text-sm font-medium text-muted-foreground">{item.source}</span>
             </div>
 
-            <h2 className="mb-4 text-xl font-bold leading-tight">{item.title}</h2>
+            <h2 className="mb-4 text-xl font-bold leading-tight">{decodedTitle}</h2>
 
-            {item.description && <p className="mb-4 text-sm text-card-foreground">{item.description}</p>}
+            {decodedDescription && <p className="mb-4 text-sm text-card-foreground">{decodedDescription}</p>}
 
             <div className="mt-auto pt-4 flex flex-wrap items-center gap-3 text-sm text-muted-foreground border-t border-border">
               {formattedDate && (

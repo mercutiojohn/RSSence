@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import type { FeedItem } from "@/types/feed"
 import { type VibeMode, useFeed } from "@/context/feed-context"
+import { decodeHtmlEntities } from "@/lib/utils"
 
 interface VibeModeCardProps {
   item: FeedItem
@@ -23,7 +24,8 @@ export default function VibeModeCard({ item, vibeMode }: VibeModeCardProps) {
   // No background, just text shadow for readability
 
   // Clean up description if needed
-  const cleanDescription = item.description ? item.description.replace(/&nbsp;/g, " ").replace(/<[^>]*>/g, "") : ""
+  const decodedTitle = decodeHtmlEntities(item.title)
+  const cleanDescription = item.description ? decodeHtmlEntities(item.description).replace(/&nbsp;/g, " ").replace(/<[^>]*>/g, "") : ""
 
   return (
     <div className="flex h-full w-full items-center justify-center p-8">
@@ -45,7 +47,7 @@ export default function VibeModeCard({ item, vibeMode }: VibeModeCardProps) {
           transition={{ duration: 0.6, delay: 0.2 }}
           style={{ fontSize: `${titleSize}rem` }}
         >
-          <span>{item.title}</span>
+          <span>{decodedTitle}</span>
         </motion.h1>
 
         {cleanDescription && (
