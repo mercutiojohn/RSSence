@@ -144,7 +144,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Silver Alcid - [@silveralcid](https://twitter.com/silveralcid) | [silver@sparkware.solutions](mailto:silver@sparkware.solutions)
+Silver Alcid - [@silveralcid](https://www.linkedin.com/in/silveralcid) | [silver@sparkware.solutions](mailto:silver@sparkware.solutions)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
