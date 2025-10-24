@@ -90,15 +90,6 @@ With the resurgence of RSS as a powerful, independent way to follow the web, RSS
 - **Integrated Clock & Navigation:** Display a multi-timezone clock, and enjoy intuitive keyboard and on-screen navigation, automatic transitions, and fullscreen toggle.
 - **Responsive & Feature-Rich Interface:** Experience a mobile-friendly design with error handling, animated transitions, and optimized rendering for smooth performance.
 
-
-### Let’s spark something great together!
-
-Got a brilliant idea but no way to build it? Let’s make it happen! At [Silver Spark Studio](https://silverspark.studio/), we’re a fresh software development agency kicking off our journey by giving back. We’re looking for exciting micro-SaaS ideas—and if they benefit the general public, we’ll bring them to life for free or at cost. Best of all, everything we create will be open-source, so your idea can grow and thrive. 
-
-Get in touch with us at [hello@silverspark.studio](mailto:hello@silverspark.studio)!
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ### Built With
 [![Next][Next.js]][Next-url]
 [![React][React.js]][React-url]
